@@ -104,7 +104,9 @@ $$(BUILD_DIR):
 #######################################
 clean:
 	-rm -fR .dep $$(BUILD_DIR)
-  
+
+flash: $$(BUILD_DIR)/$$(TARGET).elf
+	st-flash write $$(BUILD_DIR)/$$(TARGET).bin 0x8000000
 #######################################
 # dependencies
 #######################################
